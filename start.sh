@@ -24,9 +24,15 @@ Conf_Dir="$Server_Dir/conf"
 Temp_Dir="$Server_Dir/temp"
 Log_Dir="$Server_Dir/logs"
 
+# Check if the logs directory exists, create it if it doesn't
+mkdir -p logs
+
+# Create the clash.log file if it doesn't exist
+touch logs/clash.log
+
 # 将 CLASH_URL 变量的值赋给 URL 变量，并检查 CLASH_URL 是否为空
 URL=${CLASH_URL:?Error: CLASH_URL variable is not set or empty}
-IP=${IP:'IP'}
+IP=${IP:-'IP'}
 
 # 获取 CLASH_SECRET 值，如果不存在则生成一个随机数
 Secret=${CLASH_SECRET:-$(openssl rand -hex 32)}

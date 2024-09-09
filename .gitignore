@@ -5,4 +5,8 @@ temp/proxy.txt
 temp/config.yaml
 logs
 .env
-.conf/ruleset
+conf/ruleset
+conf/cache.db
+bin
+conf/config.yaml
+logs/clash.log
